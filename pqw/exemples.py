@@ -1,6 +1,8 @@
 import flet as ft
+from exemples_pres.exempless_pres import exempless_pres
+from exemples_pres.exemples_back import exemples_back
 
-def create_panel_exempless():
+def create_panel_exempless(page):
     # Контейнер Пресс
     button1 = ft.ElevatedButton(
         content=ft.Container(
@@ -25,7 +27,7 @@ def create_panel_exempless():
             border_radius=10
         ),
         bgcolor=ft.colors.TRANSPARENT,
-        on_click=lambda _: print ("Пресс") # Прозрачный фон
+        on_click=lambda e: exempless_pres(e, page,),
     )
 
     # Контейнер Спина
@@ -51,7 +53,8 @@ def create_panel_exempless():
             padding=ft.padding.all(10),
             border_radius=10
         ),
-        bgcolor=ft.colors.TRANSPARENT  # Прозрачный фон
+        bgcolor=ft.colors.TRANSPARENT,
+        on_click=lambda e: exemples_back(e, page,)  # Прозрачный фон
     )   
 
     #контейнер Бицепс
